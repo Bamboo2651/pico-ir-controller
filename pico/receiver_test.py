@@ -21,17 +21,19 @@ while len(durations) < 68:
         last_value = current_value
         last_change = now
 
-# 表示処理
+# 計測値を表示
 for value, duration in durations:
     print(value, duration)
 
-    bits = []
+# 計測値をビットへ変換
+bits = []
 
-    for value, duration in durations[4:67:2]:
-        if duration < 1000:
-            bits.append(0)
-        else:
-            bits.append(1)
+for value, duration in durations[4:67:2]:
+    if duration < 1000:
+        bits.append(0)
+    else:
+        bits.append(1)
+
 print(bits)
 
 # 1バイトだけのデータを取り出す
