@@ -67,3 +67,8 @@ print("address:", hex(address))
 print("command:", hex(command))
 print("command inverse:", hex(command_inverse))
 
+# コマンドと反転値が正しい組み合わせか自動確認
+if command + command_inverse == 0xFF:
+    print("Valid command")
+else:
+    print("Invalid command")
