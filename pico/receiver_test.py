@@ -57,3 +57,13 @@ for start in range(0, 32, 8):
 
 for byte_value in decoded_bytes:
     print(hex(byte_value))  # 16進数で表示
+
+
+address = decoded_bytes[0] + (decoded_bytes[1] * 256)
+command = decoded_bytes[2]
+command_inverse = decoded_bytes[3]
+
+print("address:", hex(address))
+print("command:", hex(command))
+print("command inverse:", hex(command_inverse))
+
